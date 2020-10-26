@@ -1,0 +1,6 @@
+name: Hello Galaxy
+description: Fournit un panneau indicateur saluant et donnant des informations aux visiteurs.
+
+type: module
+core: 8.x
+configure: hello_galaxy.form
