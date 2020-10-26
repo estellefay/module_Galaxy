@@ -20,13 +20,19 @@ class PanelBlock extends BlockBase implements BlockPluginInterface {
    * {@inheritdoc}
    */
   public function build() {
-    return array(
-        // chosir le theme
-      '#theme' => 'panel_block',
-      // faire passer l'argument message
-      '#message' => $this->t('Bienvenue, noble visiteur !'),
-    );
-  }
+
+    // Récup de la config
+    $config = $this->getConfiguration();
+
+    // Affectation de la table  silicium_offer si elle existe et n'est pas vide sinon ''
+    $silicium_offer = (isset($config['silicium_offer']) AND !empty($config['silicium_offer'])) ? $config['silicium_offer'] : '';
+
+  return array(
+    '#theme' => 'panel_block',
+    '#message' => $this->t('Bienvenue, noble visiteur !'),
+    '#offer' => $silicium_offer,
+  );
+}
 
 /**
    * {@inheritdoc}
@@ -67,7 +73,6 @@ class PanelBlock extends BlockBase implements BlockPluginInterface {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-      kint($form_state).die();
     $this->configuration['silicium_offer'] = $form_state->getValue('panel_block_silicium_offer');
   }
 

@@ -1,0 +1,10 @@
+'view robot entity':
+  title: Voir un robot
+'add robot entity':
+  title: Ajouter un robot
+'edit robot entity':
+  title: Modifier un robot
+'delete robot entity':
+  title: Supprimer un robot
+'administer robot entity':
+  title: Administrer les robots

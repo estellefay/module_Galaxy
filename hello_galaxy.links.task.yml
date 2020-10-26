@@ -1,0 +1,19 @@
+upkeep_robot.view:
+  route_name: entity.upkeep_robot.canonical
+  base_route: entity.upkeep_robot.canonical
+  title: View
+
+upkeep_robot.view:
+  route_name: entity.upkeep_robot.canonical
+  base_route: entity.upkeep_robot.canonical
+  title: View
+
+upkeep_robot.edit:
+  route_name: entity.upkeep_robot.edit_form
+  base_route: entity.upkeep_robot.canonical
+  title: Edit
+  
+upkeep_robot.delete_confirm:
+  route_name:  entity.upkeep_robot.delete_form
+  base_route:  entity.upkeep_robot.canonical
+  title: Delete

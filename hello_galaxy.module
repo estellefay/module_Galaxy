@@ -18,7 +18,7 @@ function hello_galaxy_theme() {
         ),
         'panel_block' => array(
           'template' => 'panel_block',
-          'variables' => array('message' => NULL)
+          'variables' => array('message' => NULL, 'offer' => NULL)
       ),
     );
 

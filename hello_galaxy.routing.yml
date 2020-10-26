@@ -13,3 +13,51 @@ hello_galaxy.form:
     _title: 'Hello Galaxy settings'
   requirements:
     _permission: 'administer site configuration'
+
+hello_galaxy.robot_page:
+  path: '/add-robot'
+  defaults:
+    _controller: '\Drupal\hello_galaxy\Controller\RobotController::createRobot'
+    _title: 'Ajouter un robot'
+  requirements:
+    _permission: 'access content'
+
+hello_galaxy.robot_page2:
+  path: '/delete-robot'
+  defaults:
+    _controller: '\Drupal\hello_galaxy\Controller\RobotController::deleteRobot'
+    _title: 'supprimer un robot'
+  requirements:
+    _permission: 'access content'
+
+entity.upkeep_robot.canonical:
+  path: '/see-robot/{upkeep_robot}'
+  defaults:
+    _entity_view: 'upkeep_robot'
+    _title: 'Page du robot'
+  requirements:
+    _entity_access: 'upkeep_robot.view'
+
+entity.upkeep_robot.upkeep_robot_add:
+  path: '/robot/add'
+  defaults:
+    _entity_form: upkeep_robot.add
+    _title: 'Add Robot'
+  requirements:
+    _entity_create_access: 'upkeep_robot'
+
+entity.upkeep_robot.edit_form:
+  path: '/robot/{upkeep_robot}/edit'
+  defaults:
+    _entity_form: upkeep_robot.edit
+    _title: 'Edit Robot'
+  requirements:
+    _entity_access: 'upkeep_robot.edit'
+
+entity.upkeep_robot.delete_form:
+  path: '/robot/{upkeep_robot}/delete'
+  defaults:
+    _entity_form: upkeep_robot.delete
+    _title: 'Delete Robot'
+  requirements:
+    _entity_access: 'upkeep_robot.delete'
